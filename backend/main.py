@@ -52,6 +52,6 @@ async def create_feedback(feedback:Feedback):
 async def get_metadata(query:str):
    return fetch_metadata(query)
 
-@app.get("/key")
-async def fetch_key(strr:str):
-    return fetch_imageKey(strr)
+@app.post("/key")
+async def fetch_key(image:UploadFile = File(...)):
+    return fetch_imageKey(image)
