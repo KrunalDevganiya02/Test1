@@ -1,6 +1,8 @@
 from pymongo import MongoClient
+from config import AppConfig
 
-client = MongoClient('mongodb+srv://which-img:cialabsintern@atlascluster.mytwvuv.mongodb.net/')
+client = MongoClient({AppConfig.mongo_url})
+
 db = client['which-img']
 collectionResult = db['feedback']
 collectionMeta = db['metaData']
