@@ -6,6 +6,8 @@ from typing import List, Optional
 from config import AppConfig 
 from ciaos import save,get
 import json
+from models.model import Feedback,Metadata
+
 
 app = FastAPI()
 

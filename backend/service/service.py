@@ -7,25 +7,10 @@ from pydantic import BaseModel
 from typing import List 
 from database.database import collectionMeta,collectionResult
 from ciaos import save
-from pydantic import BaseModel
 from typing import List 
 import re
+from models.model import Feedback,Metadata
 
-class QuestionAnswer(BaseModel):
-    questionID :str
-    answer : str
-
-class Metadata(BaseModel):
-    type: str
-    value: str
-
-class Feedback(BaseModel):
-    modelName : str
-    imageKey : str
-    qa : List[QuestionAnswer]
-
-class Query(BaseModel):
-    query : str
 
 
 def test_model_v1(base64_str: str, model_name: str):
